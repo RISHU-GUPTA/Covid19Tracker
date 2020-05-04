@@ -4,3 +4,6 @@ firebase/
 /firebase
 firebase.json
 .firebase/
+/build
+build
+build/

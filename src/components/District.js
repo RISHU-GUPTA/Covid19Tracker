@@ -65,7 +65,7 @@ console.log(disc[1])
             <h3 className="text-center">{this.props.state}</h3>
              <div className="row justify-content-center">{alldistrcit}</div>
             </div>
-            <Footer/>
+           
             </>
         )
     }
