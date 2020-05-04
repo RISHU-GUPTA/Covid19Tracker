@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBView, MDBIcon } from 'mdbreact';
+import {  MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBView } from 'mdbreact';
 
 const Home = (props) => {
   return (
@@ -18,10 +18,6 @@ const Home = (props) => {
           </MDBView>
 
           <MDBCardBody cascade className='text-center'>
-            {/* <h5 className='pink-text'>
-              <MDBIcon icon='utensils' /> Culinary
-            </h5> */}
-
             <MDBCardTitle className='font-weight-bold pink-text text-center'>
             Total Confirmed
             </MDBCardTitle>

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Home from './Home';
 import {instance} from '../utils/axiosconfig';
 import {Input} from 'reactstrap';
+import {Chart} from './Chart';
+import Header from './Header';
+import Footer from './Footer';
 
 export default class Main extends Component {
     constructor(props) {
@@ -13,7 +16,8 @@ export default class Main extends Component {
              confirmed:0,
              death:0,
              recovered:0,
-             date:""
+             date:"",
+             country:""
         }
     }
 
@@ -31,7 +35,7 @@ instance.get('/countries')
 
 
     createSelectItems() {
-       let country=this.state.countries;
+       let country=this.state.countries.sort();
         let items = [];         
         for (let i of country) {  
              items.push(<option key={i} value={i}>{i.toUpperCase()}</option>);   
@@ -51,9 +55,9 @@ instance.get('/countries')
         console.log("total recovered",arr.Recovered)
         console.log("total death",arr.Deaths)
         console.log("total death",arr.Date)
-        this.setState({...this.state,confirmed:arr.Confirmed,recovered:arr.Recovered,death:arr.Deaths,date:arr.Date});
+        this.setState({...this.state,confirmed:arr.Confirmed,recovered:arr.Recovered,death:arr.Deaths,date:arr.Date,country:country});
     }else{
-        this.setState({...this.state,confirmed:"NA",recovered:"NA",death:"NA"})
+        this.setState({...this.state,confirmed:"NA",recovered:"NA",death:"NA",country:country})
     }
   
        console.log(res.data.splice(-1));
@@ -63,12 +67,17 @@ instance.get('/countries')
     
     render() {
         return (
+            <>
+            <Header/>
             <div className="container">
                 <Home total={this.state.confirmed} recover={this.state.recovered} dead={this.state.death}/>
                 <Input type="select" onChange={this.onDropdownSelected} label="Select" className="mt-5" md={5}>
        {this.createSelectItems()}
   </Input>
+  <Chart confirmed={this.state.confirmed} recovered={this.state.recovered} death={this.state.death} country={this.state.country}  date={this.state.date}/>
             </div>
+            <Footer/>
+            </>
         )
     }
 }
