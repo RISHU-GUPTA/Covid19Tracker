@@ -45,7 +45,7 @@ componentDidMount() {
           </MDBCardImage>
           <MDBCardBody cascade className='text-center'>
             <MDBCardText>
-              <h5 className="red-text">Confirmed  -{country.confirmed} <br/></h5>
+              <h5 className="red-text">Active  -{country.active} <br/></h5>
               <h5 className="green-text">Cured-      {country.cured}<br/></h5>
               <h5 className="black-text">Death-       {country.death}<br/></h5>
             </MDBCardText>
@@ -76,7 +76,7 @@ componentDidMount() {
         const allsates = this.state.states.map(item => {
             if(item.total>0){
                 return (
-                    <span key={item.id} className='col-md-4 col-4' >
+                    <span key={item.id} className='col-md-4 col-12' >
                         <MDBRow className='md-4'>
                         <RenderCard country={item}  />
                         </MDBRow>
