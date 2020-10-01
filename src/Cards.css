@@ -1,0 +1,22 @@
+.state-card-district-link {
+  transition: transform 0.5s ease-in;
+}
+.district-card-title {
+  color: #2796f4;
+}
+.state-card:hover,
+.district-card:hover .district-card-title {
+  color: #02004e;
+}
+.state-card:hover .state-card-image,
+.district-card:hover .district-card-title {
+  background: linear-gradient(
+    145deg,
+    rgba(249, 152, 55, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(22, 138, 67, 1) 100%
+  );
+}
+.state-card:hover .state-card-district-link {
+  transform: scale(1.1);
+}

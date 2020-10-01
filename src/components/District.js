@@ -33,8 +33,8 @@ export default class District extends Component {
     function RenderCard({ disc }) {
       console.log(disc[1]);
       return (
-        <Card body>
-          <CardTitle className="blue-text">
+        <Card body className="district-card">
+          <CardTitle className="district-card-title">
             <h4>{disc[0]}</h4>
           </CardTitle>
           <CardText className="text-center">

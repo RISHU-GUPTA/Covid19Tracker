@@ -10,6 +10,7 @@ import {
   MDBCol,
   MDBIcon,
 } from "mdbreact";
+import "../Cards.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -38,10 +39,10 @@ export default class India extends Component {
     function RenderCard({ country }) {
       return (
         <>
-          <MDBCol col="4" className="m-3">
+          <MDBCol col="4" className="m-3 state-card">
             <MDBCard wide>
               <MDBCardImage
-                className="view view-cascade gradient-card-header peach-gradient"
+                className="view view-cascade gradient-card-header state-card-image"
                 cascade
                 tag="div"
               >
@@ -68,10 +69,10 @@ export default class India extends Component {
                 </MDBCardText>
                 <a
                   href="!#"
-                  className="orange-text mt-1 d-flex justify-content-end align-items-center"
+                  className="orange-text mt-1 d-flex justify-content-end align-items-center "
                 >
                   <Link to={`/india/${country.name}`}>
-                    <h5 className="">
+                    <h5 className="state-card-district-link">
                       See Districts{" "}
                       <MDBIcon
                         icon="chevron-right"
