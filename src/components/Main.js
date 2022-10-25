@@ -5,6 +5,7 @@ import { Input, Spinner } from 'reactstrap';
 import { Chart } from './Chart';
 import Header from './Header';
 import Footer from './Footer';
+import './style.css';
 
 export default class Main extends Component {
     constructor(props) {
@@ -78,11 +79,12 @@ export default class Main extends Component {
                     </Input>
                     <Chart confirmed={this.state.confirmed} recovered={this.state.recovered} death={this.state.death} country={this.state.country} date={this.state.date} />
                 </div> }
-               {this.state.isLoader && <div>
+               {this.state.isLoader && <div className='left'>
                     <Spinner
-                        className="ml-5"
+                        className="ml-5 cut-col"
                         color="info"
-                        size=""
+                        size="m"
+                        animation="border" variant="dark" 
                     >
                         Loading...
                     </Spinner>
