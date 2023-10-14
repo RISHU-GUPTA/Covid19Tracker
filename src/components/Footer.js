@@ -25,7 +25,7 @@ export default function Footer(props) {
             </div>
             <div className="row justify-content-center">             
                 <div className="col-auto">
-                    <p>© Copyright 2020 RISHU GUPTA</p>
+                    <p>© Copyright 2023. RISHU GUPTA</p>
                 </div>
             </div>
         </div>
